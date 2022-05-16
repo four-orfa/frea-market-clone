@@ -17,6 +17,5 @@ export class CreateItemDto {
   @IsNotEmpty()
   description: string;
 
-  @IsNotEmpty()
   status: ItemStatus;
 }
