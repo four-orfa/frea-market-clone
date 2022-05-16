@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
 import { IsInt, IsNotEmpty, IsString, MaxLength, Min } from 'class-validator';
+import { ItemStatus } from '../item-status.enum';
 
 export class CreateItemDto {
   @IsString()
@@ -15,4 +16,7 @@ export class CreateItemDto {
   @IsString()
   @IsNotEmpty()
   description: string;
+
+  @IsNotEmpty()
+  status: ItemStatus;
 }
