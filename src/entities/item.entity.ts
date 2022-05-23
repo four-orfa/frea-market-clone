@@ -5,7 +5,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
 } from 'typeorm';
+import { User } from './user.entity';
 
 @Entity()
 export class Item {
@@ -29,4 +31,7 @@ export class Item {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
+
+  @ManyToOne(() => User, (user) => user.items)
+  user: User;
 }
